@@ -54,7 +54,7 @@ export function useCheckboxGroup(props: UseCheckboxGroupProps = {}) {
   const onChangeProp = useCallbackRef(onChange)
 
   const [value, setValue] = useControllableState({
-    value: valueProp,
+    value: valueProp || [],
     defaultValue: defaultValue || [],
     onChange: onChangeProp,
   })
