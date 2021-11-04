@@ -90,9 +90,7 @@ export function ColorModeProvider(props: ColorModeProviderProps) {
     if (isBrowser && colorModeManager.type === "localStorage") {
       const mode = useSystemColorMode
         ? getColorScheme(defaultColorMode)
-        : root.get() ||
-          colorModeManager.get() ||
-          getColorScheme(defaultColorMode)
+        : root.get() || colorModeManager.get() || defaultColorMode
 
       if (mode) {
         rawSetColorMode(mode)
